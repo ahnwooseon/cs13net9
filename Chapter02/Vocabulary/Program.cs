@@ -13,7 +13,8 @@ HttpClient client = new();
 Assembly? myApp = Assembly.GetEntryAssembly();
 
 // If the previous line returned nothing then end the app.
-if (myApp is null) return;
+if (myApp is null)
+    return;
 
 // Loop through the assemblies that my app references.
 foreach (AssemblyName name in myApp.GetReferencedAssemblies())
@@ -32,8 +33,10 @@ foreach (AssemblyName name in myApp.GetReferencedAssemblies())
     }
 
     // Output the count of types and their methods.
-    WriteLine("{0:N0} types with {1:N0} methods in {2} assembly",
+    WriteLine(
+        "{0:N0} types with {1:N0} methods in {2} assembly",
         a.DefinedTypes.Count(),
         methodCount,
-        name.Name);
+        name.Name
+    );
 }

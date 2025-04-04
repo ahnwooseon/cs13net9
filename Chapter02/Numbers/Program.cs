@@ -1,5 +1,6 @@
 ﻿// An unsigned integer is a positive whole number or 0.
 uint naturalNumber = 23;
+
 // An integer is a negative or positive whole number or 0.
 int integerNumber = -23;
 
@@ -30,9 +31,15 @@ Console.WriteLine($"{decimalNotation:X}");
 Console.WriteLine($"{binaryNotation:X}");
 Console.WriteLine($"{hexadecimalNotation:X}");
 
-Console.WriteLine($"int uses {sizeof(int)} bytes and can store numbers in the range {int.MinValue:N0} to {int.MaxValue:N0}.");
-Console.WriteLine($"double uses {sizeof(double)} bytes and can store numbers in the range {double.MinValue:N0} to {double.MaxValue:N0}.");
-Console.WriteLine($"decimal uses {sizeof(decimal)} bytes and can store numbers in the range {decimal.MinValue:N0} to {decimal.MaxValue:N0}.");
+Console.WriteLine(
+    $"int uses {sizeof(int)} bytes and can store numbers in the range {int.MinValue:N0} to {int.MaxValue:N0}."
+);
+Console.WriteLine(
+    $"double uses {sizeof(double)} bytes and can store numbers in the range {double.MinValue:N0} to {double.MaxValue:N0}."
+);
+Console.WriteLine(
+    $"decimal uses {sizeof(decimal)} bytes and can store numbers in the range {decimal.MinValue:N0} to {decimal.MaxValue:N0}."
+);
 
 Console.WriteLine("Using doubles:");
 double a = 0.1;
@@ -69,25 +76,33 @@ const int col2 = 6; // Second column width.
 string line = new string('-', col1 + col2 + 3);
 
 Console.WriteLine(line);
-Console.WriteLine($"{"Expression",-col1} | {"Value",col2}");
+Console.WriteLine($"{"Expression", -col1} | {"Value", col2}");
 Console.WriteLine(line);
-Console.WriteLine($"{"double.NaN",-col1} | {double.NaN,col2}");
-Console.WriteLine($"{"double.PositiveInfinity",-col1} | {double.PositiveInfinity,col2}");
-Console.WriteLine($"{"double.NegativeInfinity",-col1} | {double.NegativeInfinity,col2}");
+Console.WriteLine($"{"double.NaN", -col1} | {double.NaN, col2}");
+Console.WriteLine($"{"double.PositiveInfinity", -col1} | {double.PositiveInfinity, col2}");
+Console.WriteLine($"{"double.NegativeInfinity", -col1} | {double.NegativeInfinity, col2}");
 Console.WriteLine(line);
-Console.WriteLine($"{"0.0 / 0.0",-col1} | {0.0 / 0.0,col2}");
-Console.WriteLine($"{"3.0 / 0.0",-col1} | {3.0 / 0.0,col2}");
-Console.WriteLine($"{"-3.0 / 0.0",-col1} | {-3.0 / 0.0,col2}");
-Console.WriteLine($"{"3.0 / 0.0 == double.PositiveInfinity",-col1} | {3.0 / 0.0 == double.PositiveInfinity,col2}");
-Console.WriteLine($"{"-3.0 / 0.0 == double.NegativeInfinity",-col1} | {-3.0 / 0.0 == double.NegativeInfinity,col2}");
-Console.WriteLine($"{"0.0 / 3.0",-col1} | {0.0 / 3.0,col2}");
-Console.WriteLine($"{"0.0 / -3.0",-col1} | {0.0 / -3.0,col2}");
+Console.WriteLine($"{"0.0 / 0.0", -col1} | {0.0 / 0.0, col2}");
+Console.WriteLine($"{"3.0 / 0.0", -col1} | {3.0 / 0.0, col2}");
+Console.WriteLine($"{"-3.0 / 0.0", -col1} | {-3.0 / 0.0, col2}");
+Console.WriteLine(
+    $"{"3.0 / 0.0 == double.PositiveInfinity", -col1} | {3.0 / 0.0 == double.PositiveInfinity, col2}"
+);
+Console.WriteLine(
+    $"{"-3.0 / 0.0 == double.NegativeInfinity", -col1} | {-3.0 / 0.0 == double.NegativeInfinity, col2}"
+);
+Console.WriteLine($"{"0.0 / 3.0", -col1} | {0.0 / 3.0, col2}");
+Console.WriteLine($"{"0.0 / -3.0", -col1} | {0.0 / -3.0, col2}");
 Console.WriteLine(line);
 
 #endregion
 
 unsafe
 {
-    Console.WriteLine($"Half uses {sizeof(Half)} bytes and can store numbers in the range {Half.MinValue:N0} to {Half.MaxValue:N0}.");
-    Console.WriteLine($"Int128 uses {sizeof(Int128)} bytes and can store numbers in the range {Int128.MinValue:N0} to {Int128.MaxValue:N0}.");
+    Console.WriteLine(
+        $"Half uses {sizeof(Half)} bytes and can store numbers in the range {Half.MinValue:N0} to {Half.MaxValue:N0}."
+    );
+    Console.WriteLine(
+        $"Int128 uses {sizeof(Int128)} bytes and can store numbers in the range {Int128.MinValue:N0} to {Int128.MaxValue:N0}."
+    );
 }
