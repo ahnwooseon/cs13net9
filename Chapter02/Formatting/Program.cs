@@ -50,3 +50,6 @@ Console.WriteLine(format: "{0,-10} {1,6}", arg0: "Name", arg1: "Count");
 Console.WriteLine(format: "{0,-10} {1,6:N0}", arg0: applesText, arg1: applesCount);
 
 Console.WriteLine(format: "{0,-10} {1,6:N0}", arg0: bananasText, arg1: bananasCount);
+
+decimal value = 0.325M;
+Console.WriteLine("Currency: {0:C}, Percentage: {0:0.0%}", value);
