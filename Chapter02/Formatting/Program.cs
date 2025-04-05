@@ -1,5 +1,4 @@
-﻿using static System.Console;
-using System.Globalization; // To use CultureInfo.
+﻿using System.Globalization; // To use CultureInfo.
 
 // Set current culture to US English so that all readers see the same output as shown in the book.
 CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
