@@ -18,4 +18,11 @@ ForegroundColor = Enum.Parse<ConsoleColor>(args[0], true);
 
 BackgroundColor = Enum.Parse<ConsoleColor>(args[1], true);
 
-CursorSize = int.Parse(args[2]);
+try
+{
+    CursorSize = int.Parse(args[2]);
+}
+catch (PlatformNotSupportedException)
+{
+    WriteLine("The current platform does not support changing the size of the cursor.");
+}
