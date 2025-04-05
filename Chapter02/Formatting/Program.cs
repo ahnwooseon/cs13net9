@@ -61,3 +61,8 @@ Write("Type your age and press ENTER: ");
 string age = ReadLine()!;
 
 WriteLine($"Hello {firstName}, you look good for {age}.");
+
+Write("Press any combination: ");
+ConsoleKeyInfo key = ReadKey();
+WriteLine();
+WriteLine("Key: {0}, Char: {1}, Modifiers: {2}", key.Key, key.KeyChar, key.Modifiers);
