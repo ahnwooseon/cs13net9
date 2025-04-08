@@ -5,6 +5,7 @@
     <Platform Name="x86" />
   </Configurations>
   <Project Path="Arrays/Arrays.csproj" />
+  <Project Path="CastingConverting/CastingConverting.csproj" />
   <Project Path="IterationStatements/IterationStatements.csproj" />
   <Project Path="Operators/Operators.csproj" />
   <Project Path="SelectionStatements/SelectionStatements.csproj" />
