@@ -1,4 +1,5 @@
-﻿using static System.Convert; // To use the ToInt32 method.
+﻿using System.Buffers.Text;
+using static System.Convert; // To use the ToInt32 method.
 # region Casting numbers implicitly and explicitly
 
 int a = 10;
@@ -115,5 +116,9 @@ WriteLine();
 // Convert the array to Base64 string and output as text.
 string encoded = ToBase64String(binaryObject);
 WriteLine($"Binary Object as Base64: {encoded}");
+
+ReadOnlySpan<byte> bytes = new(binaryObject);
+encoded = Base64Url.EncodeToString(bytes);
+WriteLine($"Binary Object as Base64Url: {encoded}");
 
 # endregion
