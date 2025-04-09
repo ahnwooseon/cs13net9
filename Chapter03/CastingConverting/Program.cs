@@ -83,3 +83,16 @@ foreach (double n in doubles)
 }
 
 # endregion
+
+# region Converting from any type to a string
+
+int number = 12;
+WriteLine(number.ToString());
+bool boolean = true;
+WriteLine(boolean.ToString());
+DateTime now = DateTime.Now;
+WriteLine(now.ToString());
+object me = new();
+WriteLine(me.ToString());
+
+# endregion
