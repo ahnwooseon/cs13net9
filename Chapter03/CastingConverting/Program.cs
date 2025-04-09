@@ -70,3 +70,16 @@ for (int x = 0; x < 8; x++)
 WriteLine();
 
 # endregion
+
+# region Taking control of rounding rules
+
+foreach (double n in doubles)
+{
+    WriteLine(
+        "Math.Round({0}, 0, MidpointRounding.AwayFromZero) is {1}",
+        n,
+        Math.Round(value: n, digits: 0, mode: MidpointRounding.AwayFromZero)
+    );
+}
+
+# endregion
