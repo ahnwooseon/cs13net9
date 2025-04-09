@@ -1,5 +1,7 @@
 ﻿using System.Buffers.Text;
+using System.Globalization;
 using static System.Convert; // To use the ToInt32 method.
+
 # region Casting numbers implicitly and explicitly
 
 int a = 10;
@@ -120,5 +122,18 @@ WriteLine($"Binary Object as Base64: {encoded}");
 ReadOnlySpan<byte> bytes = new(binaryObject);
 encoded = Base64Url.EncodeToString(bytes);
 WriteLine($"Binary Object as Base64Url: {encoded}");
+
+# endregion
+
+# region Parsing from strings to numbers or dates and times
+
+// Set the current culture to make sure date parsing works.
+CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
+
+int friends = int.Parse("27");
+DateTime birthday = DateTime.Parse("4 June 1980");
+WriteLine($"I have {friends} friends to invite to my party.");
+WriteLine($"My birthday is {birthday}.");
+WriteLine($"My birthday is {birthday:D}");
 
 # endregion
