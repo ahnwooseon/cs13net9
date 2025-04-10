@@ -1,7 +1,6 @@
 ﻿using System.Buffers.Text;
 using System.Globalization;
 using static System.Convert; // To use the ToInt32 method.
-
 # region Casting numbers implicitly and explicitly
 
 int a = 10;
@@ -135,5 +134,21 @@ DateTime birthday = DateTime.Parse("4 June 1980");
 WriteLine($"I have {friends} friends to invite to my party.");
 WriteLine($"My birthday is {birthday}.");
 WriteLine($"My birthday is {birthday:D}");
+
+# endregion
+
+# region Avoid Parse exceptions by using the TryParse method
+
+Write("How many eggs are there? ");
+string? input = ReadLine();
+
+if (int.TryParse(input, out int count))
+{
+    WriteLine($"There are {count} eggs.");
+}
+else
+{
+    WriteLine("I could not parse the input.");
+}
 
 # endregion
