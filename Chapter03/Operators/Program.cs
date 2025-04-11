@@ -1,4 +1,4 @@
-﻿# region Exploring unary operators
+﻿#region Exploring unary operators
 
 int a = 3;
 int b = a++;
@@ -8,9 +8,9 @@ int c = 3;
 int d = ++c; // Prefix means increment c before assigning it.
 WriteLine($"c is {c}, d is {d}");
 
-# endregion
+#endregion
 
-# region Exploring binary arithmetic operators
+#region Exploring binary arithmetic operators
 
 int e = 11;
 int f = 3;
@@ -25,9 +25,9 @@ double g = 11.0;
 WriteLine($"g is {g:N1}, f is {f}");
 WriteLine($"g / f = {g / f}");
 
-# endregion
+#endregion
 
-# region Exploring logical operators
+#region Exploring logical operators
 
 bool p = true;
 bool q = false;
@@ -43,9 +43,9 @@ WriteLine($"XOR | p     | q ");
 WriteLine($"p   | {p ^ p, -5} | {p ^ q, -5} ");
 WriteLine($"q   | {q ^ p, -5} | {q ^ q, -5} ");
 
-# endregion
+#endregion
 
-# region Exploring conditional logical operators
+#region Exploring conditional logical operators
 
 WriteLine();
 
@@ -63,9 +63,9 @@ static bool DoStuff()
     return true;
 }
 
-# endregion
+#endregion
 
-# region Exploring bitwise and binary shift operators
+#region Exploring bitwise and binary shift operators
 
 WriteLine();
 int x = 10;

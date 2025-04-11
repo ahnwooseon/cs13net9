@@ -1,4 +1,4 @@
-﻿# region Working with single-dimensional arrays
+﻿#region Working with single-dimensional arrays
 
 string[] names; // This can reference any size array of strings.
 
@@ -21,9 +21,9 @@ for (int i = 0; i < names2.Length; i++)
     WriteLine($"{names2[i]} is at position {i}.");
 }
 
-# endregion
+#endregion
 
-# region Working with multi-dimensional arrays
+#region Working with multi-dimensional arrays
 
 string[,] grid1 = // Two dimensional array.
 {
@@ -47,7 +47,7 @@ for (int row = 0; row <= grid1.GetUpperBound(0); row++)
 
 #endregion
 
-# region Working with jagged arrays
+#region Working with jagged arrays
 
 string[][] jagged = // An array of string arrays.
 {
@@ -73,7 +73,7 @@ for (int row = 0; row <= jagged.GetUpperBound(0); row++)
 
 #endregion
 
-# region List pattern matching with arrays
+#region List pattern matching with arrays
 
 int[] sequentialNumbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 int[] oneTwoNumbers = { 1, 2 };
@@ -110,4 +110,4 @@ static string CheckSwitch(int[] values) =>
         // Use Alt + Up or Down arrow to move statements.
     };
 
-# endregion
+#endregion

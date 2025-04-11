@@ -1,7 +1,7 @@
 ﻿using System.Buffers.Text;
 using System.Globalization;
 using static System.Convert; // To use the ToInt32 method.
-# region Casting numbers implicitly and explicitly
+#region Casting numbers implicitly and explicitly
 
 int a = 10;
 double b = a; // An int can be safely cast into a double.
@@ -19,9 +19,9 @@ e = 5_000_000_000;
 f = (int)e;
 WriteLine($"e is {e:N0}, f is {f:N0}");
 
-# endregion
+#endregion
 
-# region How negative numbers are represented in binary
+#region How negative numbers are represented in binary
 
 WriteLine("{0,12} {1,34}", "Decimal", "Binary");
 WriteLine("{0,12} {0,34:B32}", int.MaxValue);
@@ -37,17 +37,17 @@ int s = (int)r;
 Console.WriteLine($"{r, 38:B38} = {r}");
 Console.WriteLine($"{s, 38:B32} = {s}");
 
-# endregion
+#endregion
 
-# region Converting with the System.Convert type
+#region Converting with the System.Convert type
 
 double g = 9.8;
 int h = ToInt32(g); // A method of System.Convert.
 WriteLine($"g is {g}, h is {h}");
 
-# endregion
+#endregion
 
-# region Rounding numbers and the default rounding rules
+#region Rounding numbers and the default rounding rules
 
 double[,] doubles =
 {
@@ -71,9 +71,9 @@ for (int x = 0; x < 8; x++)
 }
 WriteLine();
 
-# endregion
+#endregion
 
-# region Taking control of rounding rules
+#region Taking control of rounding rules
 
 foreach (double n in doubles)
 {
@@ -84,9 +84,9 @@ foreach (double n in doubles)
     );
 }
 
-# endregion
+#endregion
 
-# region Converting from any type to a string
+#region Converting from any type to a string
 
 int number = 12;
 WriteLine(number.ToString());
@@ -97,9 +97,9 @@ WriteLine(now.ToString());
 object me = new();
 WriteLine(me.ToString());
 
-# endregion
+#endregion
 
-# region Converting from a binary object to a string
+#region Converting from a binary object to a string
 
 // Allocate an array of 128 bytes.
 byte[] binaryObject = new byte[128];
@@ -122,9 +122,9 @@ ReadOnlySpan<byte> bytes = new(binaryObject);
 encoded = Base64Url.EncodeToString(bytes);
 WriteLine($"Binary Object as Base64Url: {encoded}");
 
-# endregion
+#endregion
 
-# region Parsing from strings to numbers or dates and times
+#region Parsing from strings to numbers or dates and times
 
 // Set the current culture to make sure date parsing works.
 CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
@@ -135,9 +135,9 @@ WriteLine($"I have {friends} friends to invite to my party.");
 WriteLine($"My birthday is {birthday}.");
 WriteLine($"My birthday is {birthday:D}");
 
-# endregion
+#endregion
 
-# region Avoid Parse exceptions by using the TryParse method
+#region Avoid Parse exceptions by using the TryParse method
 
 Write("How many eggs are there? ");
 string? input = ReadLine();
@@ -151,4 +151,4 @@ else
     WriteLine("I could not parse the input.");
 }
 
-# endregion
+#endregion

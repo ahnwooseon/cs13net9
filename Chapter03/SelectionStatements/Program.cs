@@ -1,4 +1,4 @@
-﻿# region Branching with the if statement
+﻿#region Branching with the if statement
 
 string password = "ninja";
 
@@ -11,9 +11,9 @@ else
     WriteLine("Your password is strong.");
 }
 
-# endregion
+#endregion
 
-# region Pattern matching with the if statement
+#region Pattern matching with the if statement
 
 // Add and remove the "" to change between string and int.
 object o = 3;
@@ -28,9 +28,9 @@ else
     WriteLine("o is not an int so it cannot multiply!");
 }
 
-# endregion
+#endregion
 
-# region Branching with the switch statement
+#region Branching with the switch statement
 
 // Inclusive lower bound but exclusive upper bound.
 int number = Random.Shared.Next(minValue: 1, maxValue: 7);
@@ -58,9 +58,9 @@ WriteLine("After end of switch");
 A_label:
 WriteLine($"After A_label");
 
-# endregion
+#endregion
 
-# region Pattern matching with the switch statement
+#region Pattern matching with the switch statement
 
 var animals = new Animal?[]
 {
@@ -124,4 +124,4 @@ foreach (Animal? animal in animals)
     WriteLine($"switch expression: {message}");
 }
 
-# endregion
+#endregion
