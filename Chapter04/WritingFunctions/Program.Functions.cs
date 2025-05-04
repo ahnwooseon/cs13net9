@@ -3,6 +3,8 @@ using System.Linq.Expressions;
 
 partial class Program
 {
+    #region Times table example
+
     static void TimesTable(byte number, byte size = 12)
     {
         WriteLine($"This is the {number} times table with {size} rows:");
@@ -14,6 +16,10 @@ partial class Program
         }
         WriteLine();
     }
+
+    #endregion Times table example
+
+    #region Writing a function that returns a value
 
     static decimal CalculateTax(decimal amount, string twoLetterRegionCode)
     {
@@ -42,6 +48,10 @@ partial class Program
         }
         WriteLine($"CurrentCulture: {CultureInfo.CurrentCulture.DisplayName}");
     }
+
+    #endregion Writing a function that returns a value
+
+    #region Converting numbers from cardinal to ordinal
 
     static string CardinalToOrdinal(uint number)
     {
@@ -76,4 +86,51 @@ partial class Program
         }
         WriteLine();
     }
+
+    #endregion Converting numbers from cardinal to ordinal
+
+    #region Calculating factorials with recursion
+
+    static int Factorial(int number)
+    {
+        if (number < 0)
+        {
+            throw new ArgumentOutOfRangeException(
+                $"The factorial function is defined for non-negative integers only. Input: {number}",
+                nameof(number)
+            );
+        }
+        else if (number == 0)
+        {
+            return 1;
+        }
+        else
+        {
+            checked // for overflow
+            {
+                return number * Factorial(number - 1);
+            }
+        }
+    }
+
+    static void RunFactorial()
+    {
+        for (int i = -2; i <= 15; i++)
+        {
+            try
+            {
+                WriteLine($"{i}! = {Factorial(i):N0}");
+            }
+            catch (OverflowException)
+            {
+                WriteLine($"{i}! is too big for a 32-bit integer.");
+            }
+            catch (Exception ex)
+            {
+                WriteLine($"{i}! throws {ex.GetType()}: {ex.Message}");
+            }
+        }
+    }
+    
+    #endregion Calculating factorials with recursion
 }
