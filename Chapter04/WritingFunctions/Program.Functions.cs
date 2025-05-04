@@ -35,11 +35,45 @@ partial class Program
     {
         // To enable Unicode characters like Euro symbol in the console.
         OutputEncoding = System.Text.Encoding.UTF8;
-        
+
         if (!useComputerCulture)
         {
             CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo(culture);
         }
         WriteLine($"CurrentCulture: {CultureInfo.CurrentCulture.DisplayName}");
+    }
+
+    static string CardinalToOrdinal(uint number)
+    {
+        uint lastTwoDigits = number % 100;
+
+        switch (lastTwoDigits)
+        {
+            case 11: // Special case for 11th to 13th.
+            case 12:
+            case 13:
+                return $"{number:N0}th";
+            default:
+                uint lastDigit = number % 10;
+
+                string suffix = lastDigit switch
+                {
+                    1 => "st",
+                    2 => "nd",
+                    3 => "rd",
+                    _ => "th"
+                };
+
+                return $"{number:N0}{suffix}";
+        }
+    }
+
+    static void RunCardinalToOrdinal()
+    {
+        for (uint number = 1; number <= 1500; number++)
+        {
+            Write($"{CardinalToOrdinal(number)} ");
+        }
+        WriteLine();
     }
 }
