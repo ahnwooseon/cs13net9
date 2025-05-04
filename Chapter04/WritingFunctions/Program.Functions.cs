@@ -53,6 +53,11 @@ partial class Program
 
     #region Converting numbers from cardinal to ordinal
 
+    /// <summary>
+    /// Pass a 32-bit unsigned integer and it will be converted to its ordinal equivalent.
+    /// </summary>
+    /// <param name="number">Number as a cardinal value e.g. 1, 2, 3, and so on.</param>
+    /// <returns>Number as an ordinal value e.g. 1st, 2nd, 3rd, and so on.</returns>
     static string CardinalToOrdinal(uint number)
     {
         uint lastTwoDigits = number % 100;
