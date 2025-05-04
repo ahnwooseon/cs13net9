@@ -136,6 +136,62 @@ partial class Program
             }
         }
     }
-    
+
     #endregion Calculating factorials with recursion
+
+    #region Using lambdas in function implementations
+
+    static int FibImperative(uint term)
+    {
+        if (term == 0)
+        {
+            throw new ArgumentOutOfRangeException();
+        }
+        else if (term == 1)
+        {
+            return 0;
+        }
+        else if (term == 2)
+        {
+            return 1;
+        }
+        else
+        {
+            return FibImperative(term - 1) + FibImperative(term - 2);
+        }
+    }
+
+    static void RunFibImperative()
+    {
+        for (uint i = 1; i <= 30; i++)
+        {
+            WriteLine(
+                "The {0} term of the Fibonacci sequence is {1:N0}",
+                CardinalToOrdinal(i),
+                FibImperative(i)
+            );
+        }
+    }
+
+    static int FibFunctional(uint term) => term switch
+    {
+        0 => throw new ArgumentOutOfRangeException(),
+        1 => 0,
+        2 => 1,
+        _ => FibFunctional(term - 1) + FibFunctional(term - 2)
+    };
+
+    static void RunFibFunctional()
+    {
+        for (uint i = 1; i <= 30; i++)
+        {
+            WriteLine(
+                "The {0} term of the Fibonacci sequence is {1:N0}",
+                CardinalToOrdinal(i),
+                FibFunctional(i)
+            );
+        }
+    }
+
+    #endregion Using lambdas in function implementations
 }
